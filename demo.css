@@ -1,0 +1,122 @@
+:root {
+  --paper: #ffffff;
+  --ink: #111111;
+  --muted: #63656b;
+  --line: #e8e9eb;
+  --blue: #0d85ff;
+  --bg: #ececec;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: system-ui, -apple-system, "Noto Sans TC", sans-serif;
+}
+
+.topbar {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  background: #202124;
+  color: #fff;
+}
+.brand { display: flex; gap: 14px; align-items: baseline; }
+.brand .kobo { color: #b9c0c8; font-size: 13px; letter-spacing: .04em; }
+.top-actions a { color: #d7e9ff; margin-left: 14px; text-decoration: none; font-size: 14px; }
+.top-actions a:hover { text-decoration: underline; }
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(240px, 320px) minmax(0, 1fr);
+  gap: 16px;
+  padding: 16px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+.sidebar {
+  background: #fff;
+  border: 1px solid #dadada;
+  border-radius: 8px;
+  padding: 14px;
+  height: calc(100vh - 88px);
+  position: sticky;
+  top: 72px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+.sidebar label { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+.sidebar input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 16px;
+  border: 1px solid #bbb;
+  border-radius: 6px;
+  outline: none;
+}
+.sidebar input:focus { border-color: var(--blue); box-shadow: 0 0 0 2px #0d85ff22; }
+.status { color: var(--muted); font-size: 12px; margin: 10px 0; }
+.sync-info { color: var(--muted); font-size: 11px; margin: -4px 0 10px; word-break: break-all; }
+.sync-info a { color: #2a5da8; text-decoration: none; }
+.sync-info a:hover { text-decoration: underline; }
+.results { list-style: none; margin: 0; padding: 0; overflow: auto; flex: 1; }
+.results li {
+  padding: 7px 9px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+.results li:hover, .results li.active { background: #eef5ff; }
+.results small { color: var(--muted); }
+
+.reader-wrap { min-width: 0; }
+.device-label {
+  max-width: 1000px;
+  margin: 0 auto 6px;
+  display: flex;
+  justify-content: space-between;
+  color: #666;
+  font-size: 12px;
+}
+.kobo-entry {
+  max-width: 1000px;
+  min-height: 600px;
+  margin: 0 auto;
+  padding: 34px 46px 44px;
+  background: var(--paper);
+  box-shadow: 0 2px 12px #0002;
+  font-family: Georgia, "Noto Serif CJK TC", "Noto Serif CJK", serif;
+  font-size: 26px;
+  line-height: 1.42;
+  color: #111;
+  overflow-wrap: anywhere;
+}
+.kobo-entry .word { font-weight: bold; font-size: 130%; }
+.kobo-entry p { margin: 0 0 2px; }
+.kobo-entry b { font-weight: bold; }
+.kobo-entry i { font-style: italic; }
+.kobo-entry ul, .kobo-entry ol { margin: 2px 0 6px 1.3em; padding-left: .6em; }
+.kobo-entry li { margin: 1px 0; }
+.hint { color: #777; font-size: 18px; }
+kbd { font-family: ui-monospace, monospace; font-size: 12px; border: 1px solid #bbb; border-radius: 3px; padding: 1px 4px; }
+.demo-footer {
+  max-width: 1000px;
+  margin: 8px auto 0;
+  color: #666;
+  font-size: 12px;
+}
+
+@media (max-width: 820px) {
+  .layout { grid-template-columns: 1fr; }
+  .sidebar { position: static; height: 320px; }
+  .kobo-entry { padding: 24px 22px; font-size: 21px; }
+}

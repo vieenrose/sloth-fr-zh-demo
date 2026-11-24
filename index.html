@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sloth 法漢詞典 — 線上試用</title>
+<link rel="stylesheet" href="demo.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="brand">
+    <span class="kobo">Kobo dicthtml</span>
+    <strong>法漢詞典（繁體中文・台灣）</strong>
+  </div>
+  <div class="top-actions">
+    <a href="https://github.com/vieenrose/sloth-fr-zh-dict-for-kobo" target="_blank" rel="noopener">原始碼</a>
+    <a href="https://github.com/vieenrose/sloth-fr-zh-dict-for-kobo/releases/latest" target="_blank" rel="noopener">下載字典</a>
+  </div>
+</header>
+
+<main class="layout">
+  <aside class="sidebar">
+    <label for="search">查閱單字</label>
+    <input id="search" type="search" autocomplete="off" placeholder="例如 manger、maison、être" autofocus>
+    <div id="status" class="status">載入詞典中…</div>
+    <div id="syncInfo" class="sync-info">同步版本：讀取中…</div>
+    <ul id="results" class="results" aria-label="查詢結果"></ul>
+  </aside>
+
+  <section class="reader-wrap">
+    <div class="device-label">
+      <span>詞典預覽</span>
+      <span id="entryTitle">—</span>
+    </div>
+    <article id="entry" class="kobo-entry" aria-live="polite">
+      <p class="hint">輸入法文單字開始查詢。可按 <kbd>↓</kbd> / <kbd>↑</kbd> 選擇結果，<kbd>Enter</kbd> 開啟。</p>
+    </article>
+    <footer class="demo-footer">
+      資料來源：FreeDict、CFDICT、French-CEDICT、Wiktionnaire、Kaikki、Tatoeba、Gutenberg、ECDICT、OMW、Wikisource。授權 CC BY-SA 4.0；詳見仓库 NOTICE。
+    </footer>
+  </section>
+</main>
+
+<script src="demo.js"></script>
+</body>
+</html>
